@@ -1,0 +1,5 @@
+passlib[bcrypt]
+SQLAlchemy
+fastapi[all]
+pyjwt
+unicorn
