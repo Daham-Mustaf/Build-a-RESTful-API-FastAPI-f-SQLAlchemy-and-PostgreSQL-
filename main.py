@@ -4,6 +4,8 @@ from typing import Optional,List
 from database import SessionLocal
 import models
 
+# models.Base.metadata.create_all(bin= engine)
+
 app=FastAPI()
 
 class Item(BaseModel): #serializer
@@ -15,6 +17,7 @@ class Item(BaseModel): #serializer
 
     class Config:
         orm_mode=True
+
 
 
 db=SessionLocal()
