@@ -1,7 +1,8 @@
 import database as _database
 
+
 import sqlalchemy as _sql
-import sqlalchemy.orm as _orm
+# import sqlalchemy.orm as _orm
 
 class Item(_database.Base):
     __tablename__ = "items"
@@ -10,6 +11,8 @@ class Item(_database.Base):
     description = _sql.Column(_sql.Text)
     price = _sql.Column(_sql.Integer, unique=True, index=True, nullable=False)
     on_offer = _sql.Column(_sql.Boolean, default=False)
+    # created_at = _sql.Column(_sql.TIMESTAMP(timezone=True), nullable=False, server_default=_sql.text('NOW()') )
+
 
     def __str__(self):
         return f"Item(id={self.id}, name='{self.name}', description='{self.description}', price={self.price}, on_offer={self.on_offer})"

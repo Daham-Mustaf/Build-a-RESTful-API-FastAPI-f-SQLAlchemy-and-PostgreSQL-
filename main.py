@@ -15,6 +15,7 @@ class Item(BaseModel): #serializer
     price:int
     on_offer:bool
 
+
     class Config:
         orm_mode=True
 
@@ -46,6 +47,7 @@ def create_an_item(item:Item):
         description=item.description,
         on_offer=item.on_offer
     )
+    
     db.add(new_item)
     db.commit()
 
